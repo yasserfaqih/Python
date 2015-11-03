@@ -65,15 +65,32 @@ def insertData(connection ,clean_data) :
 	for dic in clean_data :
 		connection.insert_one(dic)
 
+# retrive all data from MongoDB
+def retrievData(connection) :
+	cursor = connection.find().sort("episode_no", pymongo.ASCENDING)
+	
+	# for doc in cursor :
+	# print(doc)
+	# print('\n')
+
+	DataList = [doc for doc in cursor]
+
+	return DataList
+
+
+
+
 
 
 def main() :
-	re = makeReq('http://pythonpodcast.com/')
-	so = makeSoup(re)
-	gd = getData(so)
-	pd = prepareData(gd)
+	#re = makeReq('http://pythonpodcast.com/')
+	#so = makeSoup(re)
+	#gd = getData(so)
+	#pd = prepareData(gd)
 	cn = connectMongoDB()
-	it = insertData(cn, pd)
+	#it = insertData(cn, pd)
+	rt = retrievData(cn)
+	#print(rt)
 
 if __name__ == '__main__' :
 	main()
