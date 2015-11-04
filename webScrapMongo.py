@@ -95,3 +95,10 @@ def main() :
 if __name__ == '__main__' :
 	main()
 
+''' -------------- To-do -------------- '''
+# retirve data
+# look up specific episod_no, return NOT FOUND
+# Handle Requests exceptions
+# exception handling: try .. except
+# use $gt, $gtl, $lt, $lte, limit(), skip()
+
