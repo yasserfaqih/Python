@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import sys
 import os
 
-
+#printing
 
 # make a request :: 'http://pythonpodcast.com/'
 def makeReq(path) :
